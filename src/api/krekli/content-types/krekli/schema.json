@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "kreklis",
+  "info": {
+    "singularName": "krekli",
+    "pluralName": "kreklis",
+    "displayName": "krekli"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
