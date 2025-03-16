@@ -4,14 +4,45 @@
   "info": {
     "singularName": "krekli",
     "pluralName": "kreklis",
-    "displayName": "krekli"
+    "displayName": "Krekli",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
+    "price": {
+      "type": "float"
+    },
+    "gender": {
+      "type": "string"
+    },
     "name": {
       "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "sizes": {
+      "type": "json"
+    },
+    "colors": {
+      "type": "component",
+      "repeatable": true,
+      "component": "variants.color-variants"
+    },
+    "teeImages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "krekli-variants.krekli"
     }
   }
 }

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_krekli_variants_kreklis",
+  "info": {
+    "displayName": "Krekli",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tshirt": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "colorCode": {
+      "type": "text"
+    },
+    "tshirtColorName": {
+      "type": "text"
+    }
+  }
+}

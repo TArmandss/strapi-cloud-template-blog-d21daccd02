@@ -369,12 +369,13 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiKrekliKrekli extends Struct.CollectionTypeSchema {
-  collectionName: 'kreklis';
+export interface ApiDrukaDruka extends Struct.CollectionTypeSchema {
+  collectionName: 'drukas';
   info: {
-    displayName: 'krekli';
-    pluralName: 'kreklis';
-    singularName: 'krekli';
+    description: '';
+    displayName: 'Druka';
+    pluralName: 'drukas';
+    singularName: 'druka';
   };
   options: {
     draftAndPublish: true;
@@ -383,6 +384,36 @@ export interface ApiKrekliKrekli extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    DrukasType: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::druka.druka'> &
+      Schema.Attribute.Private;
+    price: Schema.Attribute.Float;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiKrekliKrekli extends Struct.CollectionTypeSchema {
+  collectionName: 'kreklis';
+  info: {
+    description: '';
+    displayName: 'Krekli';
+    pluralName: 'kreklis';
+    singularName: 'krekli';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    colors: Schema.Attribute.Component<'variants.color-variants', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    gender: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -390,7 +421,10 @@ export interface ApiKrekliKrekli extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
+    price: Schema.Attribute.Float;
     publishedAt: Schema.Attribute.DateTime;
+    sizes: Schema.Attribute.JSON;
+    teeImages: Schema.Attribute.Component<'krekli-variants.krekli', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -906,6 +940,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::druka.druka': ApiDrukaDruka;
       'api::krekli.krekli': ApiKrekliKrekli;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

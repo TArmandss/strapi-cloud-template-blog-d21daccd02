@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "drukas",
+  "info": {
+    "singularName": "druka",
+    "pluralName": "drukas",
+    "displayName": "Druka",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "DrukasType": {
+      "type": "text"
+    },
+    "price": {
+      "type": "float"
+    }
+  }
+}
