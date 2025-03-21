@@ -24,7 +24,8 @@
       "type": "text"
     },
     "inStock": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     }
   }
 }
