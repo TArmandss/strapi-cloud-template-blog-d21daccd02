@@ -8,6 +8,7 @@ export interface KrekliVariantsKrekli extends Struct.ComponentSchema {
   };
   attributes: {
     colorCode: Schema.Attribute.Text;
+    inStock: Schema.Attribute.Boolean;
     tshirt: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true

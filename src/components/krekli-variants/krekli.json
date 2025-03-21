@@ -22,6 +22,9 @@
     },
     "tshirtColorName": {
       "type": "text"
+    },
+    "inStock": {
+      "type": "boolean"
     }
   }
 }
