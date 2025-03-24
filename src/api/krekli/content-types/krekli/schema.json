@@ -43,6 +43,11 @@
       "type": "component",
       "repeatable": true,
       "component": "krekli-variants.krekli"
+    },
+    "stocks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "stocks.krekli"
     }
   }
 }

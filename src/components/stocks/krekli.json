@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_stocks_kreklis",
+  "info": {
+    "displayName": "krekli",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "colorName": {
+      "type": "string"
+    },
+    "sizes": {
+      "type": "json"
+    }
+  }
+}
