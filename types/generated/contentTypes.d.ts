@@ -396,6 +396,40 @@ export interface ApiDrukaDruka extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiKrekliInStockKrekliInStock
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'krekli_in_stocks';
+  info: {
+    description: '';
+    displayName: 'Krekli in-stock';
+    pluralName: 'krekli-in-stocks';
+    singularName: 'krekli-in-stock';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    colors: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    gender: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::krekli-in-stock.krekli-in-stock'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    price: Schema.Attribute.Float;
+    publishedAt: Schema.Attribute.DateTime;
+    sizes: Schema.Attribute.JSON;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiKrekliKrekli extends Struct.CollectionTypeSchema {
   collectionName: 'kreklis';
   info: {
@@ -941,6 +975,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::druka.druka': ApiDrukaDruka;
+      'api::krekli-in-stock.krekli-in-stock': ApiKrekliInStockKrekliInStock;
       'api::krekli.krekli': ApiKrekliKrekli;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
